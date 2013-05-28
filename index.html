@@ -1,0 +1,136 @@
+---
+title: Secrets
+layout: site
+section: secrets
+order: none
+---
+
+<h1 class="hidden">Secrets</h1>
+
+<div class="hero un">
+    <ul>
+        <li class="filters">
+            <div href="#" class="config-1">
+                <p>Find Secrets On...</h1>
+                <ul class="selections type-selections">
+                    <li class="item">
+                        <h2 class="meta type-general"><label for="general">General</label></h2>
+                        <p>General hints and tips that don't fall in to any category.</p>
+                        <input type="checkbox" id="general" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-logging"><label for="console">Console</label></h2>
+                        <p>Improve your console and logging skills to find out more about your site or app.</p>
+                        <input type="checkbox" id="console" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-inspecting"><label for="inspecting">Inspecting</label></h2>
+                        <p>Inspect and make changes to page HTML and CSS.</p>
+                        <input type="checkbox" id="inspecting" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-editing"><label for="editing">Editing</label></h2>
+                        <p>General hints and tips that don't fall in to any category.</p>
+                        <input type="checkbox" id="editing" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-debugging"><label for="debugging">Debugging</label></h2>
+                        <p>Place breakpoints and watches to help you debug code as it runs.</p>
+                        <input type="checkbox" id="debugging" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-performance"><label for="performance">Performance</label></h2>
+                        <p>Improve the way your site or app performs with these secrets.</p>
+                        <input type="checkbox" id="performance" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-storage"><label for="storage">Storage</label></h2>
+                        <p>Find out what is in memory from your application.</p>
+                        <input type="checkbox" id="storage" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta type-mobile"><label for="mobile">Mobile</label></h2>
+                        <p>How to debug your sites on mobile and tablet devices.</p>
+                        <input type="checkbox" id="mobile" value="true" checked="checked" />
+                    </li>
+                </ul>
+                <p>In These Browsers...</p>
+                <ul class="selections browser-selections">
+                    <li class="item">
+                        <h2 class="meta browser-chrome"><label for="chrome">Chrome</label></h2>
+                        <p>Secrets for Chrome Chrome &amp; Canary.</p>
+                        <input type="checkbox" id="chrome" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-firebug"><label for="firebug">Firebug</label></h2>
+                        <p>Secrets for Firefox's Firebug Plugin.</p>
+                        <input type="checkbox" id="firebug" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-firefox"><label for="firefox">Firefox</label></h2>
+                        <p>Secrets for Firefox &amp; Firefox Aurora.</p>
+                        <input type="checkbox" id="firefox" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-IE"><label for="internet-explorer">Internet Explorer</label></h2>
+                        <p>Secrets for Internet Explorer.</p>
+                        <input type="checkbox" id="internet-explorer" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-opera"><label for="opera">Opera</label></h2>
+                        <p>Secrets for Opera.</p>
+                        <input type="checkbox" id="opera" value="true" checked="checked" />
+                    </li>
+                    <li class="item">
+                        <h2 class="meta browser-safari"><label for="safari">Safari</label></h2>
+                        <p>Secrets for Safari &amp; Webkit Nightly.</p>
+                        <input type="checkbox" id="safari" value="true" checked="checked" />
+                    </li>
+                </ul>
+
+                <div class="selections">
+                    <div class="item favorite-selection">
+                        <h2 class="meta icon-favorite">Only Show My Favorites</h2>
+                        <p>Secrets you've marked as favorites.</p>
+                    </div>
+
+                    <p class="loading-favorites">Loading Favorites...</p>
+                    <p class="no-favorites">You currently do not have any secrets marked as favorites.</p>
+                </div>
+
+                <p class="secret-count">Displaying <span>0</span> secrets</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="controller chrome firefox internet-explorer opera safari">
+
+{% assign parent = '' %}
+{% for post in site.posts_sorted_by_order %}
+    {% if post.layout == 'secret' and post.published %}
+        {% if post.parent != parent %}
+            {% if parent != '' %}
+    </section>
+            {% endif %}
+            {% assign parent = post.parent %}
+    <section>
+        <h2>{{ post.parent | capitalize }}</h2>
+        {% endif %}
+        <article class="post small"
+                 data-url="{{ post.url }}"
+                 data-browsers="{% for browser in post.browsers do %}{{ browser }}{% if forloop.last != true %} {% endif %}{% endfor %}"
+                 data-categories="{% for category in post.categories do %}{{ category }}{% if forloop.last != true %} {% endif %}{% endfor %}">
+            <header class="post-header">
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            </header>
+
+            <div class="post-content type-{{ post.parent }}">
+            </div>
+        </article>
+    {% endif %}
+{% endfor %}
+{% if parent != '' %}
+    </section>
+{% endif %}
+</div>
