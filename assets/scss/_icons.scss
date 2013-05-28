@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('/assets/fonts/icomoon.eot');
+    src:url('/assets/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('/assets/fonts/icomoon.svg#icomoon') format('svg'),
+        url('/assets/fonts/icomoon.woff') format('woff'),
+        url('/assets/fonts/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+    font-family: 'icomoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin icon($content: false) {
+    @if $content {
+        content: $content;
+    }
+    font-family: 'icomoon';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-quill:before, .icon-folder:before, .icon-book:before, .icon-briefcase:before, .icon-arrow-right:before, .icon-arrow-left:before, .icon-arrow-up:before, .icon-github:before, .icon-facebook:before, .icon-twitter:before, .icon-google-plus:before, .icon-feed:before, .icon-linkedin:before, .icon-stackoverflow:before, .icon-chrome:before, .icon-firefox:before, .icon-IE:before, .icon-opera:before, .icon-safari:before, .icon-apple:before, .icon-android:before, .icon-windows:before, .icon-zoom-in:before, .icon-zoom-out:before, .icon-search:before, .icon-bubble:before, .icon-file-xml:before, .icon-envelop:before, .icon-calendar:before, .icon-location:before, .icon-lanyrd:before, .icon-instagram:before, .icon-bug:before, .icon-reddit:before, .icon-stumbleupon:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.icon-quill:before {
+    content: "\e000";
+}
+.icon-folder:before {
+    content: "\e002";
+}
+.icon-book:before {
+    content: "\e003";
+}
+.icon-briefcase:before {
+    content: "\e004";
+}
+.icon-arrow-right:before {
+    content: "\e005";
+}
+.icon-arrow-left:before {
+    content: "\e006";
+}
+.icon-arrow-up:before {
+    content: "\e007";
+}
+.icon-github:before {
+    content: "\e008";
+}
+.icon-facebook:before {
+    content: "\e009";
+}
+.icon-twitter:before {
+    content: "\e00a";
+}
+.icon-google-plus:before {
+    content: "\e00b";
+}
+.icon-feed:before {
+    content: "\e00c";
+}
+.icon-linkedin:before {
+    content: "\e00d";
+}
+.icon-stackoverflow:before {
+    content: "\e00e";
+}
+.icon-chrome:before {
+    content: "\e00f";
+}
+.icon-firefox:before {
+    content: "\e010";
+}
+.icon-IE:before {
+    content: "\e011";
+}
+.icon-opera:before {
+    content: "\e012";
+}
+.icon-safari:before {
+    content: "\e013";
+}
+.icon-apple:before {
+    content: "\e014";
+}
+.icon-android:before {
+    content: "\e015";
+}
+.icon-windows:before {
+    content: "\e016";
+}
+.icon-zoom-in:before {
+    content: "\e017";
+}
+.icon-zoom-out:before {
+    content: "\e018";
+}
+.icon-search:before {
+    content: "\e019";
+}
+.icon-bubble:before {
+    content: "\e001";
+}
+.icon-file-xml:before {
+    content: "\e01b";
+}
+.icon-envelop:before {
+    content: "\e01c";
+}
+.icon-calendar:before {
+    content: "\e01a";
+}
+.icon-location:before {
+    content: "\e01d";
+}
+.icon-lanyrd:before {
+    content: "\e01e";
+}
+.icon-instagram:before {
+    content: "\e01f";
+}
+.icon-bug:before {
+    content: "\e020";
+}
+.icon-reddit:before {
+    content: "\e021";
+}
+.icon-stumbleupon:before {
+    content: "\e022";
+}
