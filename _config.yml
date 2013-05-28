@@ -1,0 +1,57 @@
+# _config.yml
+
+# (c)2013 Andi Smith
+# @andismith
+# http://www.andismith.com
+
+# more info: https://github.com/mojombo/jekyll/wiki/Configuration
+# !! changes require a restart of jekyll serve
+
+# options as per github pages (for compatibility locally)
+lsi: false # no index for related posts
+pygments: true # syntax highlighting
+safe: false # no plugins
+
+# source/destination for local development
+source: .
+destination: ./_site
+markdown: rdiscount
+
+# blog
+permalink: /news/:title
+
+paginate: 1000
+paginate_path: "/page/:num"
+
+# site data
+title: Secrets of the Browser Developer Tools
+url: http://www.devtoolsecrets.com
+encoded_url: http%3A%2F%2Fwww.devtoolsecrets.com
+asset_path: /assets/img/posts/
+comments_post_url: https://github.com/andismith/andismith.github.com/issues/
+comments_get_url: https://api.github.com/repos/andismith/andismith.github.com/issues/
+asset_url: http://www.andismith.com/assets/img/posts/
+#feed_url: http://www.andismith.com/feed/index.xml
+
+# personal data
+me:
+  name: Andi Smith
+  fullname: Andrew Smith
+  location: London, England
+  job: Presentation Technical Architect
+  twitter: andismith
+  twitter_url: http://www.twitter.com/andismith/
+  company: AKQA
+  company_url: http://www.akqa.com
+
+# social media data
+social:
+  github: https://github.com/andismith/dev-tool-secrets
+  twitter: devtoolsecrets
+  twitter_url: http://www.twitter.com/devtoolsecrets/
+
+jekyll_sort:
+- src: pages
+  by: order
+  direction: up
+  dest: posts_sorted_by_order
