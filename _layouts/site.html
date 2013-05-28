@@ -1,0 +1,48 @@
+---
+layout: framework
+---
+
+            <header class="site-header" id="top">
+                <h1 class="site-logo"><a href="/">{{ site.title }}</a></h1>
+            </header>
+
+            <div class="content-wrapper">
+                <section class="site-content {% if page.sidebar == 'none' %}fill{% endif %}">
+                    <nav class="site-nav">
+                        <ul>
+                            <li><a href="/" {% if page.section == 'secrets' %} class="selected"{% endif %}>secrets</a></li>
+                            <li><a href="/about" {% if page.section == 'about' %} class="selected"{% endif %}>about</a></li>
+                            <li><a href="/contribute" {% if page.section == 'contribute' %} class="selected"{% endif %}>contribute</a></li>
+                            <li class="top"><a href="#top"><span>Back to Top</span></a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="page-content">
+
+                        {{ content }}
+
+                    </div>
+
+                </section>
+
+                {% if page.sidebar != 'none' %}
+                <aside class="site-sidebar">
+
+                    {% include sidebar-event.html %}
+
+                    {% include sidebar-about.html %}
+                
+                    {% include sidebar-social.html %}
+
+                    <h1>Latest News</h1>
+                    <ul class="list">
+                    {% for post in site.posts do limit:5 %}
+                        <li>
+                            <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+                        </li>
+                    {% endfor %}
+                    </ul>
+
+                </aside>
+                {% endif %}
+            </div>

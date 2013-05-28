@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head> 
+        <meta charset="utf-8" />
+        
+        <title>{{ site.title }} - {{ page.title }}</title>
+
+        <!-- chrome frame support -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+        <!-- DNS prefetch -->
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//themes.googleusercontent.com" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        
+        <!-- fix orientation bugs -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- search meta tags -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <!-- open graph meta tags -->
+        <meta property="og:title" content="{{ site.title }}" />
+        <meta property="og:type" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- styles -->
+        <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic|Source+Code+Pro:300" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Modernizr - all other JS are loaded at bottom of page -->
+        <!--script src="/js/modernizr.min.js"></script -->
+
+    </head>
+    <body>
+
+        <div class="site-wrapper">
+            {{ content }}
+        </div>
+
+        <!--footer class="site-footer">
+            <p>&copy; {{ site.time | date: '%Y' }} Andi Smith - Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and hosted on <a href="/" target="_blank">Github</a></p>
+        </footer-->
+
+        <!-- scripts -->
+        <script src="/assets/js/lib/jquery-1.9.1.min.js"></script>
+        <script src="/assets/js/common.js"></script>
+
+        <!-- last generated: {{site.time}} -->
+    </body>
+</html>

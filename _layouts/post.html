@@ -1,0 +1,51 @@
+---
+layout: site
+section: about
+---
+        <article class="post">
+            <header class="post-header">
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            </header>
+
+            <div class="post-content">
+                <p class="post-info"><span class="meta meta-date">{{ post.date }}</span></p>
+
+                {{ post.content }}
+            </div>
+
+            <footer class="post-footer">
+                {% capture share_url %}{{ site.encoded_url }}{{ post.url | replace: '/', '%2F' }}{% endcapture %}
+                {% capture share_title %}{{ post.title | replace: ' ', '%20' }}{% endcapture %}
+
+                <p class="permalink">
+                    <a href="{{ site.url }}{{ post.url }}">Permalink</a>
+                </p>
+
+                <div class="share">
+                    <ul class="social icons-only">
+                        <li class="label">
+                            <p><strong>Share:</strong></p>
+                        </li>
+                        <li class="twitter">
+                            <p><a href="http://twitter.com/home?status={{ share_title }} - {{ share_url }} by %40{{ site.social.twitter}}" class="icon-twitter" target="_blank"><span>Twitter</span></a></p>
+                        </li>
+                        <li class="linked-in">
+                            <p><a href="http://www.linkedin.com/shareArticle?url={{ share_url }}&title={{ share_title }}" target="_blank" class="icon-linkedin"><span>LinkedIn</span></a></p>
+                        </li>
+                        <li class="google-plus">
+                            <p><a href="https://plus.google.com/share?url={{ share_url }}" target="_blank" class="icon-google-plus"><span>Google Plus</span></a></p>
+                        </li>
+                        <li class="facebook">
+                            <p><a href="http://www.facebook.com/sharer.php?u={{ share_url }}&t={{ share_title }}" target="_blank" class="icon-facebook"><span>Facebook</span></a></p>
+                        </li>
+                        <li class="reddit">
+                            <p><a href="http://reddit.com/submit?url={{ share_url }}" target="_blank" class="icon-reddit"><span>Reddit</span></a></p>
+                        </li>
+                        <li class="stumble-upon">
+                            <p><a href="http://www.stumbleupon.com/submit?url={{ share_url }}&title={{ share_title }}" target="_blank" class="icon-stumbleupon"><span>Stumble Upon</span></a></p>
+                        </li>
+                    </ul>
+                </div>
+                
+            </footer>
+        </article>

@@ -1,0 +1,43 @@
+<section>
+    <h1>Stay Social</h1>
+    <ul class="social">
+        {% if site.feed_url %}
+        <li class="rss">
+            <p><a href="{{ site.feed_url }}" class="icon-feed" target="_blank">Subscribe to the RSS feed</a></p>
+        </li>
+        {% endif %}
+        {% if site.social.twitter %}
+        <li class="twitter">
+            <p><a href="https://twitter.com/intent/follow?screen_name={{ site.social.twitter }}" class="icon-twitter" target="_blank">Follow Us</a></p>
+        </li>
+        {% endif %}
+        {% if site.social.linkedin %}
+        <li class="linked-in">
+            <p><a href="{{ site.social.linkedin }}" target="_blank" class="icon-linkedin"><span>Connect to me on LinkedIn</span></a></p>
+        </li>
+        {% endif %}
+        {% if site.social.googleplus %}
+        <li class="google-plus">
+            <p><a href="{{ site.social.googleplus }}" target="_blank" class="icon-google-plus"><span>Add me on Google Plus</span></a></p>
+        </li>
+        {% endif %}
+        {% if site.social.github %}
+        <li class="github">
+            <p><a href="{{site.social.github}}" target="_blank" class="icon-github"><span>Contribute</span></a></p>
+        </li>
+        {% endif %}
+        {% if site.social.lanyrd %}
+        <li class="lanyrd">
+            <p><a href="{{ site.social.lanyrd }}" target="_blank" class="icon-lanyrd"><span>See me speak on Lanyrd</span></a></p>
+        </li>
+        {% endif %}
+        {% if site.social.instagram %}
+        <li class="instagram">
+            <p><a href="{{ site.social.instagram }}" target="_blank" class="icon-instagram"><span>View my dinner on Instagram</span></a></p>
+        </li>
+        {% endif %}
+        <li class="contact">
+            <p><a href="http://www.andismith.com/contact" target="_blank" class="icon-envelop"><span>Contact</span></a></p>
+        </li>
+    </ul>
+</section>
