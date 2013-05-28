@@ -15,6 +15,7 @@ safe: false # no plugins
 # source/destination for local development
 source: .
 destination: ./_site
+baseurl: ''
 markdown: rdiscount
 
 # blog
