@@ -407,13 +407,18 @@ table {
    06. posts
    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 
-.controller h2 {
-    @include separator(true, false, true, true);
-    @include separator(false, true, true, false);
-    margin-top: 0;
+.controller {
+    h2 {
+        @include separator(false, true, true, true);
+        margin-top: 0;
+    }
 
-    &:first-child {
-        border-top: none;
+    &>section {
+        margin-top: 40px;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
@@ -618,9 +623,11 @@ table {
 .type-storage:before {
     content: "\e004";
 }
-.type-book:before,
-.type-console:before {
+.type-book:before {
     content: "\e003";
+}
+.type-console:before {
+    content: "\e02b";
 }
 .type-interview:before {
     content: "\e023";
@@ -796,7 +803,7 @@ table {
         &:after {
             @include icon("\e029");
             color: rgba(0, 0, 0, 0.1);
-            font-size: 3em;
+            font-size: 2em;
             position: absolute;
             right: 10px;
             top: 10px;
@@ -832,8 +839,7 @@ table {
     }
 
     p {
-        font-size: 0.8em;
-        margin: 0;
+        display: none;
     }
 
     label {
@@ -869,6 +875,16 @@ p.selections {
 @media screen and (min-width: 600px) {
     .selections {
         @include grid-row();
+
+        .item:after {
+            font-size: 3em;
+        }
+
+        p {
+            display: block;
+            font-size: 0.8em;
+            margin: 0;
+        }
 
         li {
             @include grid-cols(12);
