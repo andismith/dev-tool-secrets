@@ -19,5 +19,4 @@ tags:
 
 <p class="safari">In Safari, the console sits at the bottom of the developer tools. The escape key is used to toggle visibility of the console log. Executing a command in to the console command line will also open the console log.</p>
 
-TODO: should this be here?
 <p class="firefox">In Firefox, you can quickly navigate to the console by pressing either Ctrl, Shift and K on Windows or Cmd ⌘, Shift and K on Mac.</p>
