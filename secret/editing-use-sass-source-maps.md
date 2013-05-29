@@ -30,3 +30,5 @@ tags:
 <p>Click the "General Tab" and activate "Enable Source Maps". Click the "Experiments" tab and check the option "Support for SASS".</p>
 
 <p>After restarting your browser, you will now be able to view the line numbers of the SASS files directly.</p>
+
+<div class="video"><iframe src="about:blank" data-src="http://player.vimeo.com/video/67091490?title=0&amp;byline=0&amp;portrait=0&amp;color=ededed" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
