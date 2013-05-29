@@ -6,6 +6,10 @@ var devtools = devtools || {};
     "use strict";
 
     function init() {
+
+        // check domain to ensure not on github project page
+        devtools.utilities.checkUrl();
+
         devtools.filters.init();
         devtools.favorites.init();
         devtools.posts.init();
@@ -58,6 +62,12 @@ var devtools = devtools || {};
             utilities.save('firstVisit', 0);
         }
         return !!parseInt(firstVisit, 10);
+    };
+
+    utilities.checkUrl = function() {
+        if(window.location.href.indexOf("github") > -1) {
+            window.location.href = 'http://devtoolsecrets.com/';
+        }
     };
 
 }(devtools.utilities = devtools.utilities || {}));
