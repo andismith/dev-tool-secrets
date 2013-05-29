@@ -118,7 +118,7 @@ order: none
         <h2>{{ post.parent | capitalize }}</h2>
         {% endif %}
         <article class="post small"
-                 data-url="{{ site.baseurl }}{{ post.url }}"
+                 data-url="{{ post.url }}"
                  data-browsers="{% for browser in post.browsers do %}{{ browser }}{% if forloop.last != true %} {% endif %}{% endfor %}"
                  data-categories="{% for category in post.categories do %}{{ category }}{% if forloop.last != true %} {% endif %}{% endfor %}">
             <header class="post-header">
