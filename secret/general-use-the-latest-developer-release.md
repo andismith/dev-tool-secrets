@@ -32,4 +32,4 @@ tags:
 
 <div class="image"><img src="" data-src="/assets/img/safari-webkit.jpg" class="safari" /></div>
 
-<p>With the now frequent browser release cycles and auto-updates, it won't be long (12 weeks) before your users are using these versions so it's important to test on both the current and developer versions.</p>
+<p>Now browser release cycles are as frequent as 12 weeks and browsers auto-update, changes are incremental and less likely to be breaking; and it won't be long (>12 weeks) before your users are using these versions. It's important to test on both the current and developer versions where possible.</p>

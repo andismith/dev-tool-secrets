@@ -20,6 +20,8 @@ tags:
 
 <p>Placing breakpoints on JavaScript makes debugging much easier, but if your code has already made it to production then it's probably been minified. How can you debug minified code? Helpfully, some of the browsers have an option to un-minify your JavaScript.</p>
 
-<p class="chrome safari">In Chrome and Safari, simply select the 'Scripts' tab, find the relevant file in the drop down menu and then press the "{ }" (pretty print) icon located in the bottom panel.</p>
+<p class="chrome safari">In Chrome and Safari, simply select the 'Scripts' tab, find the relevant file and then press the "{ }" (pretty print) icon located in the bottom panel.</p>
 
-<p class="internet-explorer">In Internet Explorer 9, click the tool icon by the script selection drop down to find the option to format the JavaScript.</p>
+<p class="internet-explorer">In Internet Explorer, click the tool icon by the script selection drop down to find the option to format the JavaScript.</p>
+
+<p class="opera">Opera will automatically prettify minified JavaScript.</p>
