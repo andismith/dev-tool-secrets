@@ -10,8 +10,7 @@ namespace :site do
   task :generate do
     Jekyll::Site.new(Jekyll.configuration({
       "source"      => ".",
-      "destination" => "_site",
-      "baseurl"     => "/dev-tool-secrets/"
+      "destination" => "_site"
     })).process
   end
 
