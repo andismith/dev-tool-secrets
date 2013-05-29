@@ -4,7 +4,7 @@ layout: secret
 published: true
 
 title: Open The Console From Any Tab
-order: 05-console-beginner-1000
+order: 05-01000
 browsers:
 - chrome
 - safari

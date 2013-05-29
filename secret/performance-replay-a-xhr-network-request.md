@@ -4,7 +4,7 @@ layout: secret
 published: true
 
 title: Replay a XHR Network Request
-order: 60-performance-0400
+order: 60-00400
 browsers:
 - chrome
 categories:

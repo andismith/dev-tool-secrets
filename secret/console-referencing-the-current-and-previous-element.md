@@ -4,7 +4,7 @@ layout: secret
 published: true
 
 title: Referencing the Current and Previous Element
-order: 05-console-beginner-8000
+order: 05-08000
 browsers:
 - chrome
 - firebug

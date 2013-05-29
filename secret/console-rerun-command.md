@@ -4,9 +4,10 @@ layout: secret
 published: true
 
 title: Re-run Command
-order: 05-console-beginner-0600
+order: 05-00600
 browsers:
 - chrome
+- firebug
 - firefox
 - internet-explorer
 - opera

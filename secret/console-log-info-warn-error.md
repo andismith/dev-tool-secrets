@@ -7,6 +7,7 @@ title: Log, Info, Debug, Warn, Error
 order: 05-console-beginner-0500
 browsers:
 - chrome
+- firebug
 - firefox
 - internet-explorer
 - opera
@@ -29,5 +30,3 @@ tags:
 <p>You can output multiple values to any of these logging methods by separating your values with a comma, which can be handy for including objects and arrays on the same line. For example: <code>console.log('Kings: ', kings);</code>.</p>
 
 <div class="video"><iframe src="about:blank" data-src="http://player.vimeo.com/video/66605883?title=0&amp;byline=0&amp;portrait=0&amp;color=ededed" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
-
-<!-- You can also use `console.assert()` to test expressions for true or false. -->
