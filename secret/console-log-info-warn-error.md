@@ -4,7 +4,7 @@ layout: secret
 published: true
 
 title: Log, Info, Debug, Warn, Error
-order: 05-console-beginner-0500
+order: 05-00100
 browsers:
 - chrome
 - firebug
