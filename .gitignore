@@ -1,6 +1,8 @@
 .DS_Store
+.allow-devtools-edit
 .sass-cache/
 _site/
 _temp/
+assets/js/compiler.jar
 demos/
 CNAME
