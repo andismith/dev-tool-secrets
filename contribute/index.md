@@ -16,3 +16,5 @@ Thanks to the following contributors:
 ## How to Contribute ##
 
 Details coming shortly...
+
+<a href="https://github.com/andismith/dev-tool-secrets" target="_blank">Github Repo</a> available here!
