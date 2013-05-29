@@ -7,6 +7,7 @@ title: Checking DOMContentLoad and Load Event
 order: 60-00150
 browsers:
 - chrome
+- safari
 categories:
 - performance
 parent: performance
@@ -21,5 +22,7 @@ tags:
     <li><p>The load event fired will occur once all the initial resources (images, stylesheets, JavaScript) have been downloaded. It is represented as a red line.</p></li>
     <li><p>If the two events fire at the same time, the line will be purple.</p></li>
 </ul>
+
+<div class="image chrome"><img src="/assets/img/placeholder.gif" data-src="/assets/img/secrets/chrome-checking-domcontentloaded-and-loadevent.png" /></div>
 
 <p class="safari">In Safari, the lines are dashed rather than solid.</p>
