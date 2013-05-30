@@ -231,7 +231,7 @@ table {
 }
 
 .site-logo {
-    font-size: 2.5em;
+    font-size: 2em;
     line-height: 1.2;
     margin-top: 0;
 }
@@ -425,7 +425,7 @@ table {
 .post {
     @include separator(false, true, true, false);
 
-    h3 {
+    .post-header h3 {
         margin-bottom: 0;
     }
 
