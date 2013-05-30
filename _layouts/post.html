@@ -2,23 +2,24 @@
 layout: site
 section: about
 ---
+
         <article class="post">
             <header class="post-header">
-                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
             </header>
 
             <div class="post-content">
-                <p class="post-info"><span class="meta meta-date">{{ post.date }}</span></p>
+                <p class="post-info"><span class="meta meta-date">{{ page.date | date: "%d %B %Y" }}</span></p>
 
-                {{ post.content }}
+                {{ page.content }}
             </div>
 
             <footer class="post-footer">
-                {% capture share_url %}{{ site.encoded_url }}{{ post.url | replace: '/', '%2F' }}{% endcapture %}
-                {% capture share_title %}{{ post.title | replace: ' ', '%20' }}{% endcapture %}
+                {% capture share_url %}{{ site.encoded_url }}{{ page.url | replace: '/', '%2F' }}{% endcapture %}
+                {% capture share_title %}{{ page.title | replace: ' ', '%20' }}{% endcapture %}
 
                 <p class="permalink">
-                    <a href="{{ site.url }}{{ post.url }}">Permalink</a>
+                    <a href="{{ site.url }}{{ page.url }}">Permalink</a>
                 </p>
 
                 <div class="share">
