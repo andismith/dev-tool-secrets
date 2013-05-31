@@ -919,6 +919,16 @@ p.selections {
             font-size: 0.8em;
             margin: 0;
         }
+
+        .browser-IE {
+            font-size: 1.4em;
+            line-height: 33px;
+
+            &:before {
+                font-size: 1em;
+                line-height: 1;
+            }
+        }
     }
 }
 
