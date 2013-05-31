@@ -18,7 +18,7 @@ destination: ./_site
 markdown: rdiscount
 
 # blog
-permalink: /news/:title
+permalink: /news/:year/:month/:title
 
 paginate: 1000
 paginate_path: "/page/:num"
