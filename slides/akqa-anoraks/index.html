@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide fill segue" style="background-image: url(images/dev-tool-secrets/title.jpg)">
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>What do you use?</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/dev-tool-secrets/audience-choice.png" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>The Current State of<br>Browser Development Tools</h2>
+    </hgroup>
+    <article>
+      <p>(in my personal opinion)</p>
+      <ul class="build">
+        <li>Chrome Developer Tools have the best feature set</li>
+        <li>Firebug has fallen far behind</li>
+        <li>Firefox Developer Tools are catching Firebug up</li>
+        <li>Safari Developer Tools are a total mess</li>
+        <li>Internet Explorer Developer Tools have stagnated (IE10 ~= IE9 DevTools)</li>
+        <li>Opera 15 Dragonfly == Chrome Dev Tools</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Using the Browser Development Tools<br>In Your Workflow</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>We have to support all these browsers</li>
+        <li>We need good tools in each!</li>
+        <li>We need to know the benefits and limits of our tools.</li>
+      </ul>
+
+      <p>My development method:<br>Build in Chrome, test in others</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Use the Latest Developer Versions</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Fullest features in latest versions</li>
+        <li>12 week release cycles = incremental changes</li>
+      </ul>
+      <p>Developer versions:</p>
+      <ul>
+        <li>Chrome - <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Canary</a></li>
+        <li>Firefox - <a href="http://www.mozilla.org/en-US/firefox/aurora/">Aurora</a></li>
+        <li>Safari - <a href="http://nightly.webkit.org">Webkit Nightly</a></li>
+        <li>Internet Explorer - Platform Preview</li>
+        <li>Opera - <a href="http://www.opera.com/developer/next">Opera Next</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Previously...</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/dev-tool-secrets/original-post.png" />
+      <p class="center"><a href="http://andi.so/b-25dts" target="_blank">andi.so/b-25dts</a></p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Now...</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/dev-tool-secrets/new-site.png" />
+      <p class="center"><a href="http://www.devtoolsecrets.com/" target="_blank">devtoolsecrets.com</a></p>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/dev-tool-secrets/cat-scientist.jpg)">
+    <hgroup class="faded">
+      <h2>Getting the most out of your<br>Browser Developer Tools</h2>
+      <h3>20 "secrets" to make development faster.</h3>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide class="fill">
+    <hgroup class="faded">
+      <h2 class="meta type-console">Console</h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>1. console.assert()</h2>
+    </hgroup>
+    <article>
+      <p>Evaluate an expression and return a message to the console.</p>
+
+      <pre class="prettyprint" data-lang="javascript">console.assert(false, 'Not true');</pre>
+      <p>Output: 'Not true'</p>
+
+      <pre class="prettyprint" data-lang="javascript">console.assert(true, 'Not true');</pre>
+      <p>Output: -</p>
+
+      <p>If your expression is FALSE, the message will be displayed.</p>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug supported"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE supported"></span>
+        <span class="icon-opera supported"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>2. Reference Current and Previous Elements<br>From the Console</h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="javascript">$0 // current element selected
+
+$1 // previous element selected (Chrome, Firebug, Opera, Opera Next, Safari)
+
+$2, $3, $4 // history of previous elements selected (Chrome, Opera Next, Safari)
+
+$n(0) ... $n(5) // history of previous elements (Firebug)</pre>
+
+      <p>List for demoing:</p>
+      <ul>
+        <li>icanhascheezburger</li>
+        <li>Hamster Dance</li>
+        <li>Charlie Sheen</li>
+      </ul>
+
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug supported"></span>
+        <span class="icon-firefox supported"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera supported"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>3. Last Evaluated Expression</h2>
+    </hgroup>
+    <article>
+      <p>Need the result of the previous expression for your next console evaluation?</p>
+      <pre class="prettyprint" data-lang="javascript">$_</pre>
+
+      <script>
+        var kingdoms = ['Kingdom of the North', 'Kingdom of the Mountain and the Vale', 'Kingdom of the Isles and Rivers', 'Kingdom of the Rock', 'Kingdom of the Stormlands', 'Kingdom of the Reach', 'Dorne'];
+      </script>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide class="fill">
+    <hgroup class="faded">
+      <h2><span class="meta type-inspecting">Inspecting</span></h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>4. Active, Hover, Focus, Visited</h2>
+    </hgroup>
+    <article>
+      <ul class="screens">
+        <li>
+          <p>Chrome</p>
+          <img src="images/dev-tool-secrets/chrome-active-hover-focus-visited.png" width="240" />
+        </li>
+        <li>
+          <p>Firebug</p>
+          <img src="images/dev-tool-secrets/firebug-active-hover-focus-visited.png" width="240" />
+        </li>
+        <li>
+          <p>Firefox</p>
+          <img src="images/dev-tool-secrets/firefox-active-hover-focus-visited.png" width="240" />
+        </li>
+        <li>
+          <p>Opera</p>
+          <img src="images/dev-tool-secrets/opera-active-hover-focus-visited.png" width="240" />
+        </li>
+        <li>
+          <p>Safari</p>
+          <img src="images/dev-tool-secrets/safari-active-hover-focus-visited.png" width="240" />
+        </li>
+      </ul>
+      <p>:before and :after are already in the Styles view... at the bottom!</p>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug supported"></span>
+        <span class="icon-firefox supported"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera supported"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>5. Drag and Drop Elements in the DOM</h2>
+    </hgroup>
+    <article>
+      <p>Select the element in the DOM view, and then drag and drop!</p>
+      <img src="images/dev-tool-secrets/king-1.png" class="king" /><img src="images/dev-tool-secrets/king-2.png" class="king" /><img src="images/dev-tool-secrets/king-3.png" class="king" /><img src="images/dev-tool-secrets/king-slayer.png" class="king" />
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>6. Inspecting Typography</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/dev-tool-secrets/firefox-typography.gif" />
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox supported"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>7. Viewing Your Site As Responsive</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <ul class="screens">
+        <li>
+          <p>Chrome</p>
+          <img src="images/dev-tool-secrets/chrome-responsive.png" width="450" />
+        </li>
+        <li>
+          <p>Firefox</p>
+          <img src="images/dev-tool-secrets/firefox-responsive.png" width="450"  />
+        </li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox supported"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide class="fill">
+    <hgroup class="faded">
+      <h2><span class="meta type-debugging">Debugging</span></h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>8. Pretty Print</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Chrome - {} at bottom left of the scripts panel.</li>
+        <li>Internet Explorer - Tool icon - > "Format JavaScript"</li>
+        <li>Opera - automatically prettifies minified JavaScript. :-)</li>
+        <li>Safari - {} at the top right of the script panel.</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE supported"></span>
+        <span class="icon-opera supported"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>9. Snippets</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>In "Sources" Tab, on left.</li>
+        <li>Store code you want to run from the Developer Console multiple times.</li>
+      </ul>
+      <div class="snippets-demo"></div>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide class="nobackground">
+    <hgroup>
+      <h2>10. SASS Source Maps</h2>
+    </hgroup>
+    <article>
+      <iframe src="http://player.vimeo.com/video/67091490?byline=0&amp;portrait=0&amp;color=ffffff" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>10. SASS Source Maps</h2>
+    </hgroup>
+    <article>
+      <p>Using SASS Source Maps:</p>
+      <ul class="build">
+        <li>Requires SASS 3.3.<br>
+          <span class="side-note">Use <code>gem list</code> to check what version you are running</span></li>
+        <li>Add <code>--sourcemap</code> to your SASS watch command.<br>
+          <span class="side-note"><code>sass --watch scss/style.scss:css/style.min.css --style compressed --sourcemap</code></span></li>
+        <li>Add a sourceMappingURL with the name for a map file to the bottom of your SASS file.<br>
+          <span class="side-note"><code>/*@ sourceMappingURL=devtoolsecrets.css.map */</code></span></li>
+        <li>Next, enable the "Developer Tools Experiments" tab in <a href="chrome://flags" target="_blank">chrome://flags</a></li>
+        <li>In "Settings" activate "Enable Source Maps" and "Support for SASS".</li>
+        <li>Restart browser</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>11. JavaScript Source Maps</h2>
+    </hgroup>
+    <article>
+      <p>Using JavaScript Source Maps:</p>
+      <ul class="build">
+        <li>Google Closure Compiler builds .map files for you.<br>
+          <span class="side-note">Download <a href="https://code.google.com/p/closure-compiler/">Closure Compiler</a></span></li>
+        <li>Run Closure Compiler with Source Map Properties.<br>
+          <span class="side-note"><code>java -jar compiler.jar --js common.js --create_source_map ./common.js.map --source_map_format=V3 --js_output_file common.min.js</code></span></li>
+        <li>Add a sourceMappingURL with the name for a map file to the bottom of your JS minified file.<br>
+          <span class="side-note"><code>//@ sourceMappingURL=common.js.map</code></span></li>
+        <li>In "Settings" activate "Enable Source Maps".</li>
+        <li>Restart browser</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>12. Conditional Breakpoints</h2>
+    </hgroup>
+    <article>
+      <p>Set a breakpoint for when you need it in a loop, not everytime.</p>
+
+      <p>Create a breakpoint and right click to add a condition.</p>
+
+      <p>Will fire only when the condition is TRUE.</p>
+
+      <p>Except, in Firefox, where you must right click the source code and select "Conditional Breakpoint".</p>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug supported"></span>
+        <span class="icon-firefox supported"></span>
+        <span class="icon-IE supported"></span>
+        <span class="icon-opera supported"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>13. Debugging XmlHttpRequests</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Reload XHR requests by right clicking and selecting "Reload".</li>
+        <li>Add a XHR Breakpoint to pause the code when a particular URL is matched.</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide class="fill">
+    <hgroup class="faded">
+      <h2><span class="meta type-performance">Performance</span></h2>
+    </hgroup>
+    <article>
+    </article>
+  </slide>
+
+  <slide class="nobackground">
+    <hgroup>
+      <h2>14. Debugging Canvas Applications</h2>
+    </hgroup>
+    <article>
+      <iframe src="about:blank" data-src="http://player.vimeo.com/video/67069011?title=0&amp;byline=0&amp;portrait=0&amp;color=ededed" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>15. The Network Timeline</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>List of resources loaded</li>
+        <li>Shows time taken to be requested, latency, time to load</li>
+        <li>Shows filesize before and after unpacking</li>
+        <li>Sort on any parameter</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>16. DOMLoaded vs DOMReady</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li><p><span class="blue">DOMContentLoaded</span> - parsing finished</p></li>
+        <li><p>The <span class="red">load event fired</span> - initial resources downloaded</p></li>
+      </ul>
+
+      <div class="flexbox vcenter">
+        <img src="images/dev-tool-secrets/chrome-checking-domcontentloaded-and-loadevent.png" />
+      </div>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari supported"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>17. Exporting the Network Timeline</h2>
+    </hgroup>
+    <article>
+      <p>"AJAX isn't loading."<br>"The page is rendering incorrecting."<br>"There's an image missing."</p>
+      <p>Attach the Network timeline (HAR) to the bug report.</p>
+      <p>Developers run HAR in <a href="http://ericduran.github.io/chromeHAR/">chromeHAR</a>.</p>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>18. Inspecting Page Performance</h2>
+    </hgroup>
+    <article>
+      <p>Timeline - Frames Mode</p>
+      <ul>
+        <li>Record front end performance</li>
+        <li>Look for frames that exceed 60fps (desktop) / 30fps (mobile)</li>
+        <li>Use 'h' to hide elements and retest.</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>19. View Paint Areas</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Visualise how much of the page is being repainted</li>
+        <li>Want to keep paint areas as small as possible</li>
+      </ul>
+      <div class="animation-demo">
+        <div class="square square-basic"></div>
+        <div class="square square-basic"></div>
+        <div class="square square-basic"></div>
+        <div class="square square-basic"></div>
+        <div class="square square-basic"></div>
+        <div class="square square-basic"></div>
+      </div>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox supported"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>20. Exporting Timeline Data</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Right click to save timeline data.</li>
+        <li>Attach to a bug report.</li>
+        <li>A developer can load it in to their Dev Tools to inspect performance issues.</li>
+      </ul>
+    </article>
+    <footer>
+      <p class="browsers">
+        <span class="icon-chrome supported"></span>
+        <span class="icon-bug"></span>
+        <span class="icon-firefox"></span>
+        <span class="icon-IE"></span>
+        <span class="icon-opera"></span>
+        <span class="icon-safari"></span>
+      </p>
+    </footer>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thanks!</h2>
+      <p>More secrets at <a href="http://www.devtoolsecrets.com" class="white">http://devtoolsecrets.com</a></p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
