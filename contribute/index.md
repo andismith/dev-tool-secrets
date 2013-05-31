@@ -11,7 +11,9 @@ order: none
 
 Thanks to the following contributors:
 
-*Your name goes here!*
+<ul>
+    <li><a href="https://twitter.com/addyosmani" target="_blank">Addy Osmani</a></li>
+</ul>
 
 ## How to Contribute ##
 
