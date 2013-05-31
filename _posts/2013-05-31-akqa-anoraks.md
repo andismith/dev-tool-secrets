@@ -8,7 +8,7 @@ title: AKQA Anoraks
 
 <p>Last night I presented my first session on "Secrets of the Browser Developer Tools" at AKQA Anoraks, and I also took the opportunity to publicly announce the availability of the site.</p>
 
-<p>I've spoken at AKQA Anoraks a few times before, and it's great to see a audience receptive to the talk I was giving. At the start of the talk I asked how many people were using each of the Browser Developer Tools as their primary development tool. The rough results of the survey, bearing in mind I was counting fast, were as follows:</p>
+<p>I've spoken at AKQA Anoraks a few times before, and it's great to see an audience so receptive to the talk I was giving. Hopefully everybody came away with at least 1 new way of working within the Developer Tools. At the start of the talk I asked how many people were using each of the Browser Developer Tools as their primary development tool. The rough results of the survey, bearing in mind I was counting fast, were as follows:</p>
 
 <ul>
     <li>Firebug: 12</li>
