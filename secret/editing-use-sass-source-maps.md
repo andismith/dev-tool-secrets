@@ -15,7 +15,7 @@ tags:
 - secret
 ---
 
-<p>Creating CSS with a preprocessor gives a number of advantages, but causes problems when debugging with Developer Tools as the line numbers in CSS do not match. With SASS 3.3 and above, it's easy to create mappings to your SASS files.</p>
+<p>Authoring CSS with a preprocessor comes with a number of advantages, but can be tricky to work with when you want to play with changes in your browser DevTools. For example, changes saved to the compiled CSS in the DevTools can be overwritten when you run Sass again which isn't ideal. With SASS 3.3 and above (which you can currently install using `sass gem install sass --pre`), it's easy to create mappings to your SASS files so you can easily save changes on the fly without needing to worry.</p>
 
 <p>Firstly, add the <code>--sourcemap</code> to your SASS watch command. Like so:</p>
 
