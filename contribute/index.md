@@ -22,6 +22,8 @@ You can either contribute new tips by:
 * Creating a Markdown (.md) file in the folder 'secret' as described below and sending a pull request (the template is below).
 * Or if Github isn't your usual cup of tea - <a href="https://github.com/andismith/dev-tool-secrets/issues">adding an issue to Github issues (marked enhancement)</a>. This is a slower route - so please be patient if you submit a tip.
 
+We are also looking for an experienced proof reader, if you'd be interested in helping out please <a href="http://www.andismith.com/contact" target="_blank">contact me</a>.
+
 Regardless of the method you choose to submit, please include the following information:
 * Browsers (Chrome, Firebug, Firefox, Internet Explorer, Opera, Safari)
 * Category (General, Console, Inspect, Editing, Debugging, Performance, Storage, Mobile)
