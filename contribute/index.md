@@ -25,6 +25,7 @@ You can either contribute new tips by:
 We are also looking for an experienced proof reader, if you'd be interested in helping out please <a href="http://www.andismith.com/contact" target="_blank">contact me</a>.
 
 Regardless of the method you choose to submit, please include the following information:
+
 * Browsers (Chrome, Firebug, Firefox, Internet Explorer, Opera, Safari)
 * Category (General, Console, Inspect, Editing, Debugging, Performance, Storage, Mobile)
 * The tip, including any specific browser information.
