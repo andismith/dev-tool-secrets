@@ -236,7 +236,7 @@ table {
 }
 
 .site-logo {
-    font-size: 2em;
+    font-size: 1.8em;
     line-height: 1.2;
     margin-top: 0;
 }
@@ -286,6 +286,12 @@ table {
     // TODO: move
     .icon-bug:before {
         padding-right: 10px;
+    }
+}
+
+@media screen and (min-width: 340px) {
+    .site-logo {
+        font-size: 2em;
     }
 }
 
@@ -877,9 +883,32 @@ p.selections {
     }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 480px) {
     .selections {
         @include grid-row();
+
+        li {
+            @include grid-cols(12);
+
+            &:nth-child(2n) {
+                @include grid-cols(12, true);
+            }
+        }
+
+        .browser-IE {
+            font-size: 1em;
+            line-height: 2;
+
+            &:before {
+                font-size: 1.4em;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .selections {
 
         .item:after {
             font-size: 3em;
@@ -890,29 +919,11 @@ p.selections {
             font-size: 0.8em;
             margin: 0;
         }
-
-        li {
-            @include grid-cols(12);
-
-            &:nth-child(2n) {
-                @include grid-cols(12, true);
-            }
-        }
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .type-selections {
-        li,
-        li:nth-child(2n) {
-            @include grid-cols(8);
-
-            &:nth-child(3n) {
-                @include grid-cols(8, true);
-            }
-        }
-    }
-    .browser-selections {
+    .selections {
         li,
         li:nth-child(2n) {
             @include grid-cols(8);
