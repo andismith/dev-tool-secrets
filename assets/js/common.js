@@ -1,5 +1,5 @@
 /*jshint strict: true, curly: true, eqeqeq: true, immed: true, indent: 4, browser: true, jquery: true, evil: true, regexdash: true, browser: true, trailing: true, sub: true, unused: true, devel: true */
-
+//@ sourceMappingURL=/assets/js/common.js.map
 var devtools = devtools || {};
 
 (function(core) {
@@ -221,13 +221,23 @@ var devtools = devtools || {};
 
        @param $post         The post you wish to show */
     function showPost($post) {
-        var url = '';
+        var title = '',
+            url = '';
+
+        title = $post.find('.post-header a').text();
+        url = $post.data('url');
+
+        if (ga) {
+            ga('send', 'pageview', {
+                'page': url,
+                'title': title
+            });
+        }
 
         if (postHasContent($post)) {
             $post.removeClass('small');
             showMediaContent($post);
         } else {
-            url = $post.data('url');
             loadPostData($post, url, true);
         }
     }
