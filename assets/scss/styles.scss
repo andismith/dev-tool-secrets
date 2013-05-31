@@ -119,10 +119,15 @@ strong {
     font-weight: 400;
 }
 
-code {
+pre, code {
     background: $code-background;
     color: $code-color;
     font-family: 'Source Code Pro', 'Courier New', courier, sans-serif;
+}
+
+pre {
+    margin: 0 20px;
+    padding: 0 10px;
 }
 
 hr {
