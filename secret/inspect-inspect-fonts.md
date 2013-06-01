@@ -4,7 +4,9 @@ layout: secret
 published: true
 
 title: Inspect Fonts
-order: 10-inspect-0800
+authors:
+- Andi Smith
+order: 10-01000
 browsers:
 - firefox
 categories:

@@ -4,7 +4,9 @@ layout: secret
 published: true
 
 title: Viewing Your Site as Responsive
-order: 10-inspect-2000
+authors:
+- Andi Smith
+order: 10-02000
 browsers:
 - chrome
 - firefox

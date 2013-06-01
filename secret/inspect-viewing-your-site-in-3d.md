@@ -4,7 +4,9 @@ layout: secret
 published: true
 
 title: Viewing Your Site in 3D
-order: 10-inspect-5000
+authors:
+- Andi Smith
+order: 10-05000
 browsers:
 - firefox
 categories:
