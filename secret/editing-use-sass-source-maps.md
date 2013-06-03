@@ -4,6 +4,9 @@ layout: secret
 published: true
 
 title: Use SASS Source Maps
+authors:
+- Andi Smith
+- Addy Osmani
 order: 15-05000
 browsers:
 - chrome
@@ -19,7 +22,7 @@ tags:
 
 <p>Firstly, add the <code>--sourcemap</code> to your SASS watch command. Like so:</p>
 
-<code>sass --watch scss/style.scss:css/style.min.css --style compressed --sourcemap</code>
+<code>sass --watch scss/devtoolsecrets.scss:css/devtoolsecrets.min.css --style compressed --sourcemap</code>
 
 <p>Next, add a sourceMappingURL with the name of map file to the bottom of your SASS file. For example:</p>
 
