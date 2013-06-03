@@ -603,6 +603,10 @@ var devtools = devtools || {};
             $checkbox.trigger('change');
         }
 
+        if (ga) {
+            ga('send', 'event', 'filter', 'click', $checkbox.prop('id'), $checkbox.prop('checked'));
+        }
+
         updateSecretCount();
     }
 
