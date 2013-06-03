@@ -140,6 +140,10 @@ img {
     display: block;
     margin: 0 auto;
     padding: 2px;
+
+    &.avatar {
+        margin: 10px 0;
+    }
 }
 
 label {

@@ -1,5 +1,6 @@
 ---
 title: About
+date: 2013-01-01 00:00:00
 layout: site
 section: about
 order: none
@@ -14,6 +15,8 @@ Welcome to "Secrets of the Browser Developer Tools"! Over the last few years the
 Happy Developing!
 
 <a href="{{ site.social.twitter_url }}" target="_blank">{{ site.me.name }}</a>
+
+<div class="image"><img src="/assets/img/about/andi-small.jpg" width="150" height="150" class="avatar" /></div>
 
 ## What are Developer Tools? ##
 
