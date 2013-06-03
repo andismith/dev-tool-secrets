@@ -1,5 +1,6 @@
 ---
 title: Contribute
+date: 2013-06-03 23:40:00
 layout: site
 section: contribute
 order: none
@@ -12,7 +13,8 @@ order: none
 Thanks to the following contributors:
 
 <ul>
-    <li><a href="https://twitter.com/addyosmani" target="_blank">Addy Osmani</a></li>
+    <li><a href="http://twitter.com/iancrowther" target="_blank">Ian Crowther</a></li>
+    <li><a href="http://twitter.com/addyosmani" target="_blank">Addy Osmani</a></li>
 </ul>
 
 ## How to Contribute ##
