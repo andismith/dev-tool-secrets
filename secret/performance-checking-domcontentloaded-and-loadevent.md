@@ -4,7 +4,7 @@ layout: secret
 published: true
 
 title: Checking DOMContentLoad and Load Event
-order: 60-00150
+order: 60-00260
 browsers:
 - chrome
 - safari
