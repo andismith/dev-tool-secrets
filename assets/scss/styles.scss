@@ -554,10 +554,11 @@ table {
    06b. filters
    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 .filter-bar {
-    @include separator(true, true, true, false);
+    background: $filter-bar-color;
+    @include border-radius(5px);
     @include grid-row;
     list-style-type: none;
-    padding-left: 0;
+    padding: 10px;
 
     > li {
         @include grid-sub-cols(5, 19);
