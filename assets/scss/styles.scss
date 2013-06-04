@@ -561,10 +561,10 @@ table {
     padding: 10px;
 
     > li {
-        @include grid-sub-cols(5, 19);
+        @include grid-sub-cols(11, 19);
 
         &.sort {
-            @include grid-sub-cols(14, 19);
+            @include grid-sub-cols(8, 19);
             text-align: left;
         }
     }
