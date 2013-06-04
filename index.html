@@ -1,111 +1,50 @@
 ---
 title: Secrets
+date: 2013-06-04 00:00:00
 layout: site
 section: secrets
 order: none
 ---
 
-<h1 class="hidden">Secrets</h1>
+{% for post in site.posts do limit:1 %}
+<p>Latest news - <a href="{{ post.url }}">{{ post.title }}</a></p>
+{% endfor %}
 
-<p>Welcome! This site is currently in BETA!</p>
-<p>Over the coming days, weeks and months look out for new secrets and site features.</p>
+<h1>Secrets</h1>
 
-<div class="hero un">
-    <ul>
-        <li class="filters">
-            <div href="#" class="config-1">
-                <p>Filter Secrets By...</h1>
-                <ul class="selections type-selections">
-                    <li class="item">
-                        <h2 class="meta type-general"><label for="general">General</label></h2>
-                        <p>General hints and tips that don't fall in to any category.</p>
-                        <input type="checkbox" id="general" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-console"><label for="console">Console</label></h2>
-                        <p>Improve your console skills to find out more about your site or app.</p>
-                        <input type="checkbox" id="console" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-inspecting"><label for="inspecting">Inspecting</label></h2>
-                        <p>Inspect and make changes to page HTML and CSS.</p>
-                        <input type="checkbox" id="inspecting" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-editing"><label for="editing">Editing</label></h2>
-                        <p>General hints and tips that don't fall in to any category.</p>
-                        <input type="checkbox" id="editing" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-debugging"><label for="debugging">Debugging</label></h2>
-                        <p>Place breakpoints and watches to help you debug code as it runs.</p>
-                        <input type="checkbox" id="debugging" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-performance"><label for="performance">Performance</label></h2>
-                        <p>Improve the way your site or app performs with these secrets.</p>
-                        <input type="checkbox" id="performance" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-storage"><label for="storage">Storage</label></h2>
-                        <p>Find out what is in memory from your application.</p>
-                        <input type="checkbox" id="storage" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta type-mobile"><label for="mobile">Mobile</label></h2>
-                        <p>How to debug your sites on mobile and tablet devices.</p>
-                        <input type="checkbox" id="mobile" value="true" checked="checked" />
-                    </li>
-                </ul>
-                <p>In These Browsers...</p>
-                <ul class="selections browser-selections">
-                    <li class="item">
-                        <h2 class="meta browser-chrome"><label for="chrome">Chrome</label></h2>
-                        <p>Secrets for Chrome Chrome &amp; Canary.</p>
-                        <input type="checkbox" id="chrome" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta browser-firebug"><label for="firebug">Firebug</label></h2>
-                        <p>Secrets for Firefox's Firebug Plugin.</p>
-                        <input type="checkbox" id="firebug" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta browser-firefox"><label for="firefox">Firefox</label></h2>
-                        <p>Secrets for Firefox &amp; Firefox Aurora.</p>
-                        <input type="checkbox" id="firefox" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta browser-IE"><label for="internet-explorer">Internet Explorer</label></h2>
-                        <p>Secrets for Internet Explorer.</p>
-                        <input type="checkbox" id="internet-explorer" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta browser-opera"><label for="opera">Opera</label></h2>
-                        <p>Secrets for Opera.</p>
-                        <input type="checkbox" id="opera" value="true" checked="checked" />
-                    </li>
-                    <li class="item">
-                        <h2 class="meta browser-safari"><label for="safari">Safari</label></h2>
-                        <p>Secrets for Safari &amp; Webkit Nightly.</p>
-                        <input type="checkbox" id="safari" value="true" checked="checked" />
-                    </li>
-                </ul>
+<ul class="filter-bar">
+    <li class="sort">
+        Show
+        <div class="options">
+            <a href="#" class="selected">All</a>
+            <ul class="list">
+                <li><a href="#" data-filter="all" data-selected="true">All</a></li>
+                <li><a href="#" data-filter="favorites" data-selected="false">Favorites</a></li>
+                <!--<li><a href="#" data-filter="last-month" data-selected="false">Latest</a></li>-->
+            </ul>
+        </div>
+        <!--by
+        <div class="options">
+            <a href="#" class="selected">Category</a>
+            <ul class="list">
+                <li><a href="#" data-filter="category">Category</a></li>
+                <li><a href="#" data-filter="date">Date</a></li>
+                <li><a href="#" data-filter="experience-level">Experience Level</a></li>
+            </ul>
+        </div>-->
+    </li>
+    <li class="browsers"> 
+        <p>
+            <a href="#" data-browser="chrome" data-selected="true" class="browser-chrome selected"><span>Chrome</span></a>
+            <a href="#" data-browser="firefox" data-selected="true" class="browser-firefox selected"><span>Firefox</span></a>
+            <a href="#" data-browser="internet-explorer" data-selected="true" class="browser-IE selected"><span>Internet Explorer</span></a>
+            <a href="#" data-browser="opera" data-selected="true" class="browser-opera selected"><span>Opera</span></a>
+            <a href="#" data-browser="safari" data-selected="true" class="browser-safari selected"><span>Safari</span></a>
+        </p>
+    </li>
+</ul>
 
-                <div class="selections">
-                    <div class="item favorite-selection">
-                        <h2 class="meta icon-favorite">Only Show My Favorites</h2>
-                        <p>Secrets you've marked as favorites.</p>
-                    </div>
-
-                    <p class="loading-favorites">Loading Favorites...</p>
-                    <p class="no-favorites">You currently do not have any secrets marked as favorites.</p>
-                </div>
-
-                <p class="secret-count">Displaying <span>0</span> secrets</p>
-            </div>
-        </li>
-    </ul>
-</div>
+<p class="secret-count">Displaying <span>0</span> secrets</p>
 
 <div class="controller chrome firefox internet-explorer opera safari">
 
@@ -119,6 +58,25 @@ order: none
             {% assign parent = post.parent %}
     <section>
         <h2>{{ post.parent | capitalize }}</h2>
+
+        {% if post.parent == "general" %}
+        <p class="meta">General hints and tips that don't fall in to any category.</p>
+        {% elsif post.parent == "console" %}
+        <p class="meta">Improve your console skills to find out more about your site or app.</p>
+        {% elsif post.parent == "inspecting" %}
+        <p class="meta">Inspect and make changes to page HTML and CSS.</p>
+        {% elsif post.parent == "editing" %}
+        <p class="meta">Editing your code with the console.</p>
+        {% elsif post.parent == "debugging" %}
+        <p class="meta">Place breakpoints and watches to help you debug code as it runs.</p>
+        {% elsif post.parent == "performance" %}
+        <p class="meta">Improve the way your site or app performs with these secrets.</p>
+        {% elsif post.parent == "storage" %}
+        <p class="meta">Find out what is in memory from your application.</p>
+        {% elsif post.parent == "mobile" %}
+        <p class="meta">How to debug your sites on mobile and tablet devices.</p>
+        {% endif %}
+
         {% endif %}
         <article class="post small"
                  data-url="{{ post.url }}"

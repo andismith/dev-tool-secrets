@@ -23,4 +23,6 @@ title: AKQA Anoraks
 
 <p>Regardless, <a href="http://andi.so/dtspaa" target="_blank">here are the slides for last nights talk</a>. If you'd like me to talk at your event - whether it's a meetup, conference or learning session - <a href="http://www.andismith.com/contact" target="_blank">please get in contact</a>!</p>
 
+<p>Happy Anoraking!</p>
+
 <p><a href="http://www.twitter.com/andismith">Andi Smith</a.</p>

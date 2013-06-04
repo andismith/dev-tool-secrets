@@ -34,9 +34,6 @@
 
         <link href="/assets/css/styles.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- Modernizr - all other JS are loaded at bottom of page -->
-        <!--script src="/js/modernizr.min.js"></script -->
-
     </head>
     <body>
 
@@ -44,13 +41,9 @@
             {{ content }}
         </div>
 
-        <!-- &copy; {{ site.time | date: '%Y' }} Andi Smith -->
-
-        <!-- scripts -->
         <script src="assets/js/lib/jquery-1.10.1.min.js"></script>
         <script src="assets/js/common.min.js"></script>
 
-        <!-- Google Analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -61,6 +54,8 @@
           ga('send', 'pageview');
         </script>
 
+
+        <!-- &copy; {{ site.time | date: '%Y' }} Andi Smith -->
         <!-- last generated: {{site.time}} -->
     </body>
 </html>

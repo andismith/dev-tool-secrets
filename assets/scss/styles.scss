@@ -41,6 +41,12 @@ body {
     color: $text-color;
     font: 300 100%/1.5 'Source Sans Pro', sans-serif;
     margin: 8px;
+
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 }
 
 ::selection {
@@ -544,6 +550,102 @@ table {
     @include separator(true, false, false, false);
 }
 
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
+   06b. filters
+   -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+.filter-bar {
+    @include separator(true, true, true, false);
+    @include grid-row;
+    list-style-type: none;
+    padding-left: 0;
+
+    > li {
+        @include grid-sub-cols(5, 19);
+
+        &.sort {
+            @include grid-sub-cols(14, 19);
+            text-align: left;
+        }
+    }
+
+    .options {
+
+        display: inline-block;
+
+        > a {
+            color: $link-on-color;
+            display: inline-block;
+            padding: 0 10px;
+
+            &:after {
+                @include icon('\e024');
+                font-size: 0.6em;
+                padding-left: 5px;
+            }
+        }
+
+        ul {
+            overflow: auto;
+            padding: 0;
+            position: relative;
+        }
+
+        li {
+            display: none;
+        }
+
+        &.show {
+            ul {
+                border-bottom: solid 1px $line-light-color;
+                @include box-shadow(2px 2px 2px $line-dark-color);
+                position: absolute;
+            }
+
+            li {
+                background: $background;
+                border: solid 1px $line-light-color;
+                border-bottom: none;
+                @include box-shadow(inset 0 1px 0 0 $line-highlight-color);
+                display: block;
+                padding: 10px;
+                min-width: 100px;
+            }
+        }
+    }
+
+    .browsers {
+        p {
+            line-height: 1;
+            margin: 0;
+            text-align: right;
+        }
+        a {
+            @include icon();
+            color: $unselected-color;
+            display: inline-block;
+            padding: 5px;
+
+            span {
+                display: none;
+            }
+
+            &.selected {
+                color: $selected-color;
+            }
+        }
+    }
+}
+
+.filter-overlay {
+    display: none;
+    overflow: auto;
+    position: absolute;
+
+    &.show {
+        display: block;
+    }
+}
+
 .filter {
     @include separator(false, true, true);
     @include grid-row();
@@ -877,11 +979,10 @@ p.selections {
 }
 
 .secret-count {
-    font-size: 1.6em;
+    text-align: center;
 
     span {
         display: inline-block;
-        font-size: 2rem;
         font-weight: bold;
         padding: 0 5px;
     }

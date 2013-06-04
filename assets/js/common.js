@@ -1,5 +1,5 @@
 /*jshint strict: true, curly: true, eqeqeq: true, immed: true, indent: 4, browser: true, jquery: true, evil: true, regexdash: true, browser: true, trailing: true, sub: true, unused: true, devel: true */
-//@ sourceMappingURL=/assets/js/common.js.map
+//@sourceMappingURL=/assets/js/common.js.map
 var devtools = devtools || {};
 
 (function(core) {
@@ -11,6 +11,7 @@ var devtools = devtools || {};
         devtools.utilities.checkUrl();
 
         devtools.filters.init();
+        devtools.overlay.init();
         devtools.favorites.init();
         devtools.posts.init();
         devtools.scroll.init();
@@ -19,7 +20,6 @@ var devtools = devtools || {};
     core.init = init;
 
 }(devtools.core = devtools.core || {}));
-
 
 (function(utilities) {
     "use strict";
@@ -71,6 +71,37 @@ var devtools = devtools || {};
     };
 
 }(devtools.utilities = devtools.utilities || {}));
+
+(function(overlay) {
+    "use strict";
+
+    var $document = $(document);
+
+    function open(e) {
+        var $overlay = $(this).data('overlay');
+        e.preventDefault();
+
+
+        $().addClass('show');
+    }
+
+    function close(e) {
+        e.preventDefault();
+        $(this).removeClass('show');
+    }
+
+    function initEventHandlers() {
+        $document.on('click', '.open', open);
+        $document.on('click', '.close', close);
+    }
+
+    function init() {
+        initEventHandlers();
+    }
+
+    overlay.init = init;
+
+}(devtools.overlay = devtools.overlay || {}));
 
 (function(scroll, $) {
     "use strict";
@@ -402,18 +433,14 @@ var devtools = devtools || {};
         }
     }
 
-    function toggleFavorites(e) {
-        var $elem = $(this);
-
-        if ($elem.hasClass('checked')) {
-            devtools.filters.filterPosts();
-            devtools.filters.updateSecretCount();
-            $elem.removeClass('checked');
-        } else {
+    function toggleFavorites(enabled) {
+        if (enabled) {
             filterPosts();
-            devtools.filters.updateSecretCount();
-            $elem.addClass('checked');
+        } else {
+            devtools.filters.filterPosts();
         }
+
+        devtools.filters.updateSecretCount();
     }
 
     function filterPosts() {
@@ -442,6 +469,7 @@ var devtools = devtools || {};
         changeFilters();
     }
 
+    favorites.toggleFavorites = toggleFavorites;
     favorites.init = init;
 
 }(devtools.favorites = devtools.favorites || {}, jQuery));
@@ -451,52 +479,53 @@ var devtools = devtools || {};
 
     var categoryFilters = [],
         browserFilters = [],
-        $categoryFilters = $('.type-selections').find('input:checkbox'),
-        $browserFilters = $('.browser-selections').find('input:checkbox'),
         $controller = $('.controller'),
         $selections = $('.selections li'),
-        $posts = $('.post');
+        $posts = $('.post'),
+        $options = $('.filter-bar .options'),
+        $browsers = $('.filter-bar .browsers a');
 
     function setFilters(filters, $filters) {
         // empty filters
         filters = [];
 
         $filters.each(function() {
-            if (this.checked) {
-                filters.push(this.id);
-                $(this).parent('li').addClass('checked');
-            } else {
-                $(this).parent('li').removeClass('checked');
+            var $filter = $(this);
+            if ($filter.data('selected')) {
+                filters.push($filter.data('browser'));
             }
         });
 
         return filters;
     }
 
-    function checkFiltered(filters, $filters) {
+    function setFilteredOptions(filters, $filters) {
 
         filters = filters.join(' ');
 
         $filters.each(function() {
-            if (filters.indexOf(this.id) >= 0) {
-                this.checked = 'checked';
-                $(this).parent('li').addClass('checked');
+            var $filter = $(this);
+            if (filters.indexOf($filter.data('browser')) >= 0) {
+                $filter.data('selected', true);
+                $filter.addClass('selected');
             } else {
-                this.checked = '';
-                $(this).parent('li').removeClass('checked');
+                $filter.data('selected', false);
+                $filter.removeClass('selected');
             }
         });
 
     }
 
-    function checkAll(filters, $filters) {
+    function setAllOptions(filters, $filters) {
         // empty filters
         filters = [];
 
         $filters.each(function() {
-            this.checked = 'checked';
-            filters.push(this.id);
-            $(this).parent('li').addClass('checked');
+            var $filter = $(this);
+
+            filters.push($filter.data('browser'));
+            $filter.data('selected', true);
+            $filter.addClass('selected');
         });
     }
 
@@ -528,32 +557,6 @@ var devtools = devtools || {};
         $secretCount.html(devtools.posts.countAvailablePosts($posts));
     }
 
-    function onCategoryChange(e) {
-        
-        if (e) {
-            e.preventDefault();
-        }
-
-        categoryFilters = setFilters(categoryFilters, $categoryFilters);
-        saveFilter('categoryFilters', categoryFilters);
-
-        filters.filterPosts();
-    }
-
-    function onBrowserChange(e) {
-        
-        if (e) {
-            e.preventDefault();
-        }
-
-        browserFilters = setFilters(browserFilters, $browserFilters);
-        saveFilter('browserFilters', browserFilters);
-
-        updateController();
-
-        filters.filterPosts();
-    }
-
     function filterPosts() {
         $posts.each(function() {
             var $elem = $(this),
@@ -561,15 +564,7 @@ var devtools = devtools || {};
                 l = 0,
                 postCategories = $elem.data('categories'),
                 postBrowsers = $elem.data('browsers'),
-                categoryFound = false,
                 browserFound = false;
-
-            for (i = 0, l=categoryFilters.length; i<l; i++) {
-                if ((postCategories.indexOf(categoryFilters[i]) >= 0)) {
-                    categoryFound = true;
-                    break;
-                }
-            }
 
             for (i = 0, l=browserFilters.length; i<l; i++) {
                 if ((postBrowsers.indexOf(browserFilters[i]) >= 0)) {
@@ -578,7 +573,7 @@ var devtools = devtools || {};
                 }
             }
 
-            if (categoryFound && browserFound) {
+            if (browserFound) {
                 $elem.show();
             } else {
                 $elem.hide();
@@ -588,71 +583,116 @@ var devtools = devtools || {};
         devtools.posts.toggleSections();
     }
 
-    function onSelectionClick(e) {
-        var $checkbox = {};
+
+    // hides all option lists
+    function hideOptionsList() {
+        $options.removeClass('show');
+    }
+
+    function toggleOptionsList($option) {
+        var $parent = $option.parent('.options');
+
+        if ($parent.hasClass('show')) {
+            hideOptionsList();
+        } else {
+            hideOptionsList();
+            $parent.addClass('show');
+        }
+    }
+
+    function setBrowserSelectedState($browser, enabled) {
+
+        if (ga) {
+            ga('send', 'event', 'browser', 'click', $browser.data('browser'), enabled);
+        }
+
+        if (enabled) {
+            $browser.data('selected', true);
+            $browser.addClass('selected');
+        } else {
+            $browser.data('selected', false);
+            $browser.removeClass('selected');
+        }
+
+    }
+
+    function toggleBrowserSelected($browser) {
+        var enabled = !$browser.data('selected');
+
+        setBrowserSelectedState($browser, enabled);
+    }
+
+    function changeOption($option) {
+        var $parent;
+
+        $parent = $option.parents('.options');
+
+        $parent.find('.selected').html($option.html());
+
+        if ($option.data('filter') === 'favorites') {
+            devtools.favorites.toggleFavorites(true);
+        } else {
+            devtools.favorites.toggleFavorites(false);
+        }
+
+        hideOptionsList();
+    }
+
+    function onOptionClick(e) {
+        var $option = $(this);
 
         e.preventDefault();
 
-        $checkbox = $(this).find('input:checkbox');
+        toggleOptionsList($option);
+    }
 
-        if ($checkbox.is(':checked')) {
-            $checkbox.prop('checked', '');
-            $checkbox.trigger('change');
-        } else {
-            $checkbox.prop('checked', 'checkbox');
-            $checkbox.trigger('change');
-        }
+    function onOptionListClick(e) {
+        var $option = $(this);
 
-        if (ga) {
-            ga('send', 'event', 'filter', 'click', $checkbox.prop('id'), $checkbox.prop('checked'));
-        }
+        e.preventDefault();
 
-        updateSecretCount();
+        changeOption($option);
+    }
+
+    function onBrowserClick(e) {
+        var $browser = $(this);
+
+        e.preventDefault();
+
+        toggleBrowserSelected($browser);
+
+        browserFilters = setFilters(browserFilters, $browsers);
+        saveFilter('browserFilters', browserFilters);
+
+        updateController();
+        filters.filterPosts();
+        updateSecretCount()
     }
 
     function initFilters() {
-        categoryFilters = loadFilter('categoryFilters');
         browserFilters = loadFilter('browserFilters');
 
-        if (devtools.utilities.firstVisit) {
-            checkAll(categoryFilters, $categoryFilters);
-            checkAll(browserFilters, $browserFilters);
-            onCategoryChange();
-            onBrowserChange();
+        if (devtools.utilities.firstVisit || !browserFilters.length) {
+            setAllOptions(browserFilters, $browsers);
         } else {
-
-            if (categoryFilters.length === 0) {
-                checkAll(categoryFilters, $categoryFilters);
-            } else {
-                checkFiltered(categoryFilters, $categoryFilters);
-            }
-            if (browserFilters.length === 0) {
-                checkAll(browserFilters, $browserFilters);
-                updateController(true);
-            } else {
-                checkFiltered(browserFilters, $browserFilters);
-                updateController();
-            }
+            setFilteredOptions(browserFilters, $browsers);
         }
 
-
-
-
-        updateSecretCount();
+        updateController();
     }
 
     function initEventHandlers() {
-        $selections.on('click', onSelectionClick)
-        $categoryFilters.on('change', onCategoryChange);
-        $browserFilters.on('change', onBrowserChange);
+
+        $options.on('click', '.selected', onOptionClick);
+        $options.on('click', '.list a', onOptionListClick);
+        $browsers.on('click', onBrowserClick);
     }
 
     function init() {
         initEventHandlers();
-
         initFilters();
-
         filterPosts();
+        updateSecretCount();
     }
 
     filters.updateSecretCount = updateSecretCount;
