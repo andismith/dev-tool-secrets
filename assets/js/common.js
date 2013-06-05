@@ -527,6 +527,8 @@ var devtools = devtools || {};
             $filter.data('selected', true);
             $filter.addClass('selected');
         });
+
+        return filters;
     }
 
     function saveFilter(type, value) {
@@ -557,14 +559,19 @@ var devtools = devtools || {};
         $secretCount.html(devtools.posts.countAvailablePosts($posts));
     }
 
-    function filterPosts() {
+    function filterPosts(date) {
         $posts.each(function() {
             var $elem = $(this),
                 i = 0,
                 l = 0,
                 postCategories = $elem.data('categories'),
                 postBrowsers = $elem.data('browsers'),
+                dateFound = true,
                 browserFound = false;
+
+            if (date !== undefined && date < $elem.data('date')) {
+                dateFound = false;
+            }
 
             for (i = 0, l=browserFilters.length; i<l; i++) {
                 if ((postBrowsers.indexOf(browserFilters[i]) >= 0)) {
@@ -629,10 +636,20 @@ var devtools = devtools || {};
 
         $parent.find('.selected').html($option.html());
 
-        if ($option.data('filter') === 'favorites') {
-            devtools.favorites.toggleFavorites(true);
-        } else {
-            devtools.favorites.toggleFavorites(false);
+        switch ($option.data('filter')) {
+            case 'favorites':
+                devtools.favorites.toggleFavorites(true);
+                break;
+            /*case 'last-month':
+                // toggle latest
+                var today = new Date();
+                today.toString('yyyyMMdd');
+                today.setMonth(today.getMonth() - 1);
+                filterPosts(today);
+                break;*/
+            default:
+                devtools.favorites.toggleFavorites(false);
+                break;
         }
 
         hideOptionsList();
@@ -666,14 +683,14 @@ var devtools = devtools || {};
 
         updateController();
         filters.filterPosts();
-        updateSecretCount()
+        updateSecretCount();
     }
 
     function initFilters() {
         browserFilters = loadFilter('browserFilters');
 
-        if (devtools.utilities.firstVisit || !browserFilters.length) {
-            setAllOptions(browserFilters, $browsers);
+        if (devtools.utilities.firstVisit() || !browserFilters.length) {
+            browserFilters = setAllOptions(browserFilters, $browsers);
         } else {
             setFilteredOptions(browserFilters, $browsers);
         }

@@ -81,6 +81,7 @@ order: none
         {% endif %}
         <article class="post small"
                  data-url="{{ post.url }}"
+                 data-date="{{ post.date | date: '%Y%m%d' }}"
                  data-browsers="{% for browser in post.browsers do %}{{ browser }}{% if forloop.last != true %} {% endif %}{% endfor %}"
                  data-categories="{% for category in post.categories do %}{{ category }}{% if forloop.last != true %} {% endif %}{% endfor %}">
             <header class="post-header">
