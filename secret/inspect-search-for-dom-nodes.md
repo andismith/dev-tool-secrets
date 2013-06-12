@@ -18,11 +18,15 @@ tags:
 
 <p class="firefox">In Firefox, you can search for a particular DOM node anywhere in a document from within the "Inspector" panel. This feature is available to the right of the DOM breadcrumb navigation and hidden as a small search box.</p>
 
-<div class="chrome image"><img src="/assets/img/placeholder.gif" data-src="/assets/img/secrets/firefox-inspect-search-for-dom-nodes-small.png" /></div>
+<div class="firefox image"><img src="/assets/img/placeholder.gif" data-src="/assets/img/secrets/firefox-inspect-search-for-dom-nodes-small.png" /></div>
 
 
 <p class="firefox">The search box expands when in focus.</p>
 
-<div class="chrome image"><img src="/assets/img/placeholder.gif" data-src="/assets/img/secrets/firefox-inspect-search-for-dom-nodes-large.png" /></div>
+<div class="firefox image"><img src="/assets/img/placeholder.gif" data-src="/assets/img/secrets/firefox-inspect-search-for-dom-nodes-large.png" /></div>
 
 <p>Typing in a matched selector will automatically highlight it in the DOM tree.</p>
+
+<p class="chrome">In Chrome, you can press Ctrl-F to open the Find dialog. CSS selectors work as expected.</p>
+
+<div class="chrome image"><img src="/assets/img/placeholder.gif" data-src="http://i.imgur.com/L4xYPvn.png" /></div>
