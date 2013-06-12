@@ -21,7 +21,7 @@ tags:
 
 <p><code>console.log()</code> is an extremely useful tool for outputting debug without having to use alerts; but there are some other methods that you can use to output information to ease viewing in the console.</p>
 
-<p>You can use <code>console.info()</code> to output information messages; <code>console.debug()</code> to output debug messages; <code>console.warn()</code> to output warning messages and <code>console.error()</code> to output error messages.</p>
+<p>You can use <code>console.info()</code> to output information messages; <code>console.debug()</code> to output debug messages; <code>console.warn()</code> to output warning messages and <code>console.error()</code> to output error messages. In Chrome and Firefox, you can use<code>console.table()</code> to output the contents of an object in a sortable, tabulated format.</p>
 
 <p class="firefox">Firefox will show a small grey icon next to info, warn and error messages to signal that they may require further attention. Firefox does not show anything different for debug - according to MDN it has been deprecated in Firefox in favour of <code>console.log()</code></p>
 
