@@ -10,9 +10,11 @@ order: none
 
 ## Thanks to: ##
 
-Thanks to the following contributors:
+<a href="http://twitter.com/andismith" target="_blank">AndiSmith</a> would like to thank the following contributors:
 
 <ul>
+    <li><a href="http://twitter.com/KzhAve" target="_blank">Kaizhi Wei</a></li>
+    <li><a href="http://twitter.com/paul_irish" target="_blank">Paul Irish</a></li>
     <li><a href="http://twitter.com/iancrowther" target="_blank">Ian Crowther</a></li>
     <li><a href="http://twitter.com/addyosmani" target="_blank">Addy Osmani</a></li>
 </ul>
