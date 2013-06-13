@@ -8,6 +8,7 @@ order: 05-01000
 browsers:
 - chrome
 - safari
+- firefox
 categories:
 - console
 parent: console
