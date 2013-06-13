@@ -8,6 +8,7 @@ authors:
 - Andi Smith
 order: 10-00410
 browsers:
+- chrome
 - firefox
 categories:
 - inspecting
