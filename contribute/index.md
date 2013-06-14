@@ -36,7 +36,7 @@ Regardless of the method you choose to submit, please include the following info
 * Category (General, Console, Inspect, Editing, Debugging, Performance, Storage, Mobile)
 * The tip, including any specific browser information.
 
-Contributors will be achknowledged/credited on this page rather than on individual tips, as well as in the Markdown file.
+Contributors will be acknowledged/credited on this page rather than on individual tips, as well as in the Markdown file.
 
 If you are creating a Markdown file, here is an example template. Feel free to clone one already in the repo.
 
