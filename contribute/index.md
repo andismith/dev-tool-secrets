@@ -12,11 +12,25 @@ order: none
 
 <a href="http://twitter.com/andismith" target="_blank">AndiSmith</a> would like to thank the following contributors:
 
+### Creators ###
+
+The people listed here have created new secrets. Thank you!
+
 <ul>
-    <li><a href="http://twitter.com/KzhAve" target="_blank">Kaizhi Wei</a></li>
-    <li><a href="http://twitter.com/paul_irish" target="_blank">Paul Irish</a></li>
-    <li><a href="http://twitter.com/iancrowther" target="_blank">Ian Crowther</a></li>
-    <li><a href="http://twitter.com/addyosmani" target="_blank">Addy Osmani</a></li>
+    <li><a href="http://github.com/Aptary">Aptary</a></li>
+    <li><a href="http://github.com/Kaizhi">Kaizhi</a></li>
+    <li><a href="http://github.com/iancrowther">Ian Crowther</a></li>
+</ul>
+
+### Editors ###
+
+The people listed here have helped make this site a better place by improving secrets, checking for errors and fixing typos. Thank you!
+
+<ul>
+    <li><a href="http://github.com/EvanHahn">Evan Hahn</a></li>
+    <li><a href="http://github.com/rdebeasi">rdebeasi</a></li>
+    <li><a href="http://github.com/paulirish">Paul Irish</a></li>
+    <li><a href="http://github.com/addyosmani">Addy Osmani</a></li>
 </ul>
 
 ## How to Contribute ##
