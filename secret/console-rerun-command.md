@@ -4,7 +4,9 @@ layout: secret
 published: true
 
 title: Re-run Command
-order: 05-00600
+authors:
+- Andi Smith
+order: 05-03000
 browsers:
 - chrome
 - firebug
