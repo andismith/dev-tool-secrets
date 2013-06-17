@@ -62,8 +62,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.2em;
-    margin: 20px 0 5px;
+    font-size: 1.5em;
+    margin: 10px 0 5px;
 
     a {
         color: $heading-color;
@@ -75,7 +75,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.3em;
     margin: 10px 0 5px;
 }
 
@@ -84,15 +84,43 @@ h3, h4, h5, h6 {
 }
 
 h3 {
-    font-size: 1.8em;
+    font-size: 1.2em;
 }
 
 h4 {
-    font-size: 1.6em;
+    font-size: 1.1em;
 }
 
 h5 {
-    font-size: 1.4em;
+    font-size: 1em;
+}
+
+@media screen and (min-width: 340px) {
+    h1 {
+        font-size: 2.2em;
+        margin: 20px 0 5px;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin: 10px 0 5px;
+    }
+
+    h3, h4, h5, h6 {
+        margin: 10px 0;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    h4 {
+        font-size: 1.6em;
+    }
+
+    h5 {
+        font-size: 1.4em;
+    }
 }
 
 /* links --------------------------------------- */
@@ -246,7 +274,7 @@ table {
 }
 
 .site-logo {
-    font-size: 1.8em;
+    font-size: 1.6em;
     line-height: 1.2;
     margin-top: 0;
 }
@@ -337,7 +365,7 @@ table {
     }
 
     li {
-        font-size: 1.2em;
+        font-size: 1em;
 
         &.top {
             float: right;
@@ -381,7 +409,7 @@ table {
     a {
         color: $link-on-color;
         display: block;
-        padding: 10px 5px 10px 0;
+        padding: 5px 5px 5px 0;
 
         &.selected,
         &:hover {
@@ -395,7 +423,7 @@ table {
         font-size: 1.4em;
 
         a {
-            padding-right: 10px;
+            padding: 10px 10px 10px 0;
         }
     }
 }
@@ -439,6 +467,10 @@ table {
 
         &:first-child {
             margin-top: 0;
+        }
+
+        .meta {
+            font-size: 0.8em;
         }
     }
 }
@@ -523,13 +555,6 @@ table {
 
     a {
         display: block;
-
-        &:hover:after {
-            color: $post-icon-hover;
-            font-size: 1.4rem;
-            @include icon("\e024");
-            padding-left: 20px;
-        }
     }
 }
 
@@ -550,21 +575,29 @@ table {
     @include separator(true, false, false, false);
 }
 
+@media screen and (min-width: 340px) {
+
+    .small .post-header a:hover:after {
+        color: $post-icon-hover;
+        display: inline-block;
+        font-size: 1.4rem;
+        @include icon("\e024");
+        padding-left: 20px;
+    }
+}
+
 /* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- 
    06b. filters
    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 .filter-bar {
     background: $filter-bar-color;
     @include border-radius(5px);
-    @include grid-row;
     list-style-type: none;
     padding: 10px;
 
     > li {
-        @include grid-sub-cols(11, 19);
 
         &.sort {
-            @include grid-sub-cols(8, 19);
             text-align: left;
         }
     }
@@ -616,8 +649,9 @@ table {
 
     .browsers {
         p {
+            font-size: 1.4em;
             line-height: 1;
-            margin: 0;
+            margin: 10px 0 0;
             text-align: right;
         }
         a {
@@ -633,6 +667,25 @@ table {
             &.selected {
                 color: $selected-color;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 340px) {
+    .filter-bar {
+        @include grid-row;
+
+        > li {
+            @include grid-sub-cols(11, 19);
+
+            &.sort {
+                @include grid-sub-cols(8, 19);
+            }
+        }
+
+        .browsers p {
+            font-size: 1em;
+            margin: 0;
         }
     }
 }
