@@ -3,7 +3,7 @@ date: 2013-06-18 15:51:00
 layout: secret
 published: true
 
-title: Using the console's timing functions
+title: Using the Console Timer
 authors:
 - Aptary
 order: 05-00175
