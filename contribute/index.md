@@ -17,9 +17,9 @@ order: none
 The people listed here have created new secrets. Thank you!
 
 <ul>
-    <li><a href="http://github.com/Aptary">Aptary</a></li>
-    <li><a href="http://github.com/Kaizhi">Kaizhi</a></li>
-    <li><a href="http://github.com/iancrowther">Ian Crowther</a></li>
+    <li><a href="http://github.com/Aptary">Aptary</a> <span class="meta">(2)</span></li>
+    <li><a href="http://github.com/Kaizhi">Kaizhi</a> <span class="meta">(1)</span></li>
+    <li><a href="http://github.com/iancrowther">Ian Crowther</a> <span class="meta">(1)</span></li>
 </ul>
 
 ### Editors ###
