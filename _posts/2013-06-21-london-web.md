@@ -20,7 +20,7 @@ title: London Web
     <li>Internet Explorer: 0</li>
     <li>Opera: 0</li>
     <li>Safari: 1</li>
-</li>
+</ul>
 
 <p>It's interesting to see the continued usage for Firebug despite it not receiving updates as frequently as the others. I hope the tools for Firefox, Opera and Safari are being used (even if not as primary tools) as they are all great resources. As I mention in my talks, we are not building sites for just one browser, so it is important to know the features and benefits of each.</p>
 
