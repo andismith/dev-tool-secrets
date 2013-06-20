@@ -11,12 +11,12 @@ title: AKQA Anoraks
 <p>I've spoken at AKQA Anoraks a few times before, and it's great to see an audience so receptive to the talk I was giving. Hopefully everybody came away with at least 1 new way of working within the Developer Tools. At the start of the talk I asked how many people were using each of the Browser Developer Tools as their primary development tool. The rough results of the survey, bearing in mind I was counting fast, were as follows:</p>
 
 <ul>
-    <li>Firebug: 12</li>
+    <li>Firebug: 25%</li>
     <li>Firefox: 0</li>
-    <li>Chrome: 40</li>
+    <li>Chrome: 74%</li>
     <li>Opera: 0</li>
-    <li>Internet Explorer: 1</li>
-    <li>Safari: 1</li>
+    <li>Internet Explorer: 1 person</li>
+    <li>Safari: 1 person</li>
 </ul>
 
 <p>Chrome Developer Tools have by far the best feature set, and it appears developers are aware of this with their strong alliance with the browser. Or, could it be that the number of presentations, talks and videos on Chrome Dev Tools far outweighs any of the competition?</p>
@@ -25,4 +25,4 @@ title: AKQA Anoraks
 
 <p>Happy Anoraking!</p>
 
-<p><a href="http://www.twitter.com/andismith">Andi Smith</a.</p>
+<p><a href="http://www.twitter.com/andismith">Andi Smith</a>.</p>
