@@ -6,12 +6,12 @@ published: true
 title: Override Geolocation
 authors:
 - Thomas Gratier # Your name.
-order: 99-99999
+order: 90-50000
 browsers:
 - firefox
-parent: Extensions # must be one of the categories above
+parent: extensions
 categories:
-- Extensions # can be multiple
+- extensions # can be multiple
 tags:
 - secret # do not remove
 ---

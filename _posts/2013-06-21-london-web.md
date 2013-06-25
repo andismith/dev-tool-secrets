@@ -6,7 +6,7 @@ published: true
 title: London Web
 ---
 
-<p>I've just back from presenting at this months'
+<p>I've just got back from presenting at this months'
 <href="http://www.meetup.com/londonweb/events/91770942/">London Web</a>. Thank you to everyone who turned up, I hope you had as much fun as I did - from those I spoke to it seemed as though everyone got a lot out of it.</p>
 
 <p>Congratulations to Nathan O'Hanlon, the organiser of London Web, for becoming a father today (technically, yesterday now). Obviously he couldn't make the meetup today - which made things interesting as I found myself introducing myself!</p>
