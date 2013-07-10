@@ -25,4 +25,4 @@ tags:
 
 <p class="safari">In Safari, you will need to enable the Developer Tools by checking the option in Preferences &gt; Advanced &gt; Show Develop Menu first.</p>
 
-<p class="firebug">Since Firebug is an extension for Firefox, you will need to install the add on from <a href="http://getfirebug.com/">http://getfirebug.com/</a>
+<p class="firebug">Since Firebug is an extension for Firefox, you will need to install the add on from <a href="http://getfirebug.com/">http://getfirebug.com/</a></p>
