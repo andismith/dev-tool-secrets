@@ -11,6 +11,7 @@ browsers:
 - internet-explorer
 - opera
 - safari
+- firebug
 categories:
 - performance
 parent: performance
@@ -27,5 +28,7 @@ tags:
 <p class="opera">In Opera, to clear the cache click the Network tab, select the Network Options secondary tab and choose the first option.</p>
 
 <p class="safari">In Safari, you can disable your browser cache under the Develop menu in the menu bar.</p>
+
+<p class="firebug">In Firebug, you can disable your browser cache under the menu in the Net tab.</p>
 
 <p>To bring up the clear cache (and other data) dialog on any browser press Ctrl, Shift and Delete in Windows, and press Shift, Cmd and Backspace on Mac.</p>
