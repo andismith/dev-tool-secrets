@@ -11,6 +11,7 @@ order: 00-00610
 browsers:
 - chrome
 - firefox
+- firebug
 categories:
 - general
 parent: general
@@ -27,3 +28,5 @@ tags:
 <p class="chrome">In Chrome Developer Tool settings under the "General" tab, you can also change the appearance of the tools so that panels are split vertically.</p>
 
 <p class="firefox">In Firefox Aurora, you can also dock to right and take advantage of this trick.</p>
+
+<p class="firebug">Firebug was the first to offer this trick.</p>
