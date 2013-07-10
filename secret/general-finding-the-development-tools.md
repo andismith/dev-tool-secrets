@@ -11,6 +11,7 @@ browsers:
 - internet-explorer
 - opera
 - safari
+- firebug
 categories:
 - general
 parent: general
@@ -23,3 +24,5 @@ tags:
 <p>As well as a menu shortcut, you can access the Developer Tools easily either pressing "F12" in Windows or "Cmd" ⌘, "Option" ⌥ and "I" on the Mac, or by right clicking on the page and selecting “Inspect Element”.
 
 <p class="safari">In Safari, you will need to enable the Developer Tools by checking the option in Preferences &gt; Advanced &gt; Show Develop Menu first.</p>
+
+<p class="firebug">Since Firebug is an extension for Firefox, you will need to install the add on from <a href="http://getfirebug.com/">http://getfirebug.com/</a>
