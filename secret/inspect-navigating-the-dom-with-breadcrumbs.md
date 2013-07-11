@@ -12,6 +12,7 @@ browsers:
 - firefox
 - opera
 - safari
+- firebug
 categories:
 - inspecting
 parent: inspecting
