@@ -21,7 +21,13 @@ tags:
 
 <p><code>console.log()</code> is an extremely useful tool for outputting debug without having to use alerts; but there are some other methods that you can use to output information to ease viewing in the console.</p>
 
+<p><code>console.log()</code> will work printf style. So you can do things like this: <code>console.log("%s is %d years old.", "Bob", 42)</code>.</p>
+
 <p>You can use <code>console.info()</code> to output information messages; <code>console.debug()</code> to output debug messages; <code>console.warn()</code> to output warning messages and <code>console.error()</code> to output error messages.</p>
+
+<p class="firebug chrome">You may also use the %c pattern to use the second argument as a style formatting parameter. For example: <code>console.log("%cThis is green text on a yellow background.", "color:green; background-color:yellow");</code>.</p>
+
+<p class="firebug">Firebug will show different icons for these variations, as well as box the messages in colorful backgrounds.</p>
 
 <p class="firefox">Firefox will show a small grey icon next to info, warn and error messages to signal that they may require further attention. Firefox does not show anything different for debug - according to MDN it has been deprecated in Firefox in favour of <code>console.log()</code></p>
 

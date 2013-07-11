@@ -9,6 +9,8 @@ browsers:
 - chrome
 - firefox
 - safari
+- firebug
+- firefox
 categories:
 - general
 parent: general
@@ -23,3 +25,7 @@ tags:
 <p class="firefox safari">In the Firefox and Safari Developer Tools, the dock option can be found in the top left next to the close button is the option to undock the tools in to a new window.</p>
 
 <p class="safari">If you dock Safari's Developer Tools in to a new window, you are presented with an option to re-dock against the bottom and the left of the browser window; but at present the Developer Tools need to be undocked before they can be moved.</p>
+
+<p class="firebug">To change the docked position, click the down arrow next to Firebug’s icon in the main toolbar, followed by “Firebug UI Location”. You will have multiple choices for top/bottom/left/right/detached. Firebug also has icons in the upper right corner to quickly change, or to minimize and close.</p>
+
+<p class="firefox">The Firefox DevTools have docking icons in the top left corner of the toolbar for switching between bottom and right, and for expanding into a separate window.</p>
