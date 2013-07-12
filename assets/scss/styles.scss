@@ -1339,6 +1339,7 @@ p.selections {
 
     .post {
         .chrome,
+        .firebug,
         .firefox,
         .internet-explorer,
         .opera,
@@ -1348,6 +1349,7 @@ p.selections {
     }
 
     &.chrome .post .chrome,
+    &.firebug .post .firebug,
     &.firefox .post .firefox,
     &.internet-explorer .post .internet-explorer,
     &.opera .post .opera,
