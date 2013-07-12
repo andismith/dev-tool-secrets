@@ -19,4 +19,4 @@ tags:
 
 <p class="chrome">The breakpoint can be turned off by unchecking the box, or deleted by right clicking and selecting "Delete Breakpoint".</p>
 
-<p class="firebug">Firebug allows breakpoints on XHRs by selecting the "break-on-next" button in the Network tab to break on the next one, or by right-clicking and choosing "Break on XHR". You can optionally choose a breakpoint condition as well./p>
+<p class="firebug">Firebug allows breakpoints on XHRs by selecting the "break-on-next" button in the Network tab to break on the next one, or by right-clicking and choosing "Break on XHR". You can optionally choose a breakpoint condition as well.</p>
