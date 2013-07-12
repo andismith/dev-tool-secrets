@@ -11,6 +11,7 @@ browsers:
 - internet-explorer
 - opera
 - safari
+- firebug
 categories:
 - debugging
 parent: debugging
