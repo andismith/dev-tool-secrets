@@ -18,6 +18,7 @@ The people listed here have created new secrets. Thank you!
 
 <ul>
     <li><a href="http://github.com/Aptary">Aptary</a> <span class="meta">(2)</span></li>
+    <li><a href="http://github.com/ThomasG77">ThomasG77</a> <span class="meta">(1)</span></li>
     <li><a href="http://github.com/Kaizhi">Kaizhi</a> <span class="meta">(1)</span></li>
     <li><a href="http://github.com/iancrowther">Ian Crowther</a> <span class="meta">(1)</span></li>
 </ul>
@@ -27,10 +28,11 @@ The people listed here have created new secrets. Thank you!
 The people listed here have helped make this site a better place by improving secrets, checking for errors and fixing typos. Thank you!
 
 <ul>
-    <li><a href="http://github.com/EvanHahn">Evan Hahn</a></li>
-    <li><a href="http://github.com/rdebeasi">rdebeasi</a></li>
-    <li><a href="http://github.com/paulirish">Paul Irish</a></li>
-    <li><a href="http://github.com/addyosmani">Addy Osmani</a></li>
+    <li><a href="http://github.com/sroussey">Steven Roussey</a> <span class="meta">(15)</span></li>
+    <li><a href="http://github.com/EvanHahn">Evan Hahn</a> <span class="meta">(2)</span></li>
+    <li><a href="http://github.com/rdebeasi">rdebeasi</a> <span class="meta">(1)</span></li>
+    <li><a href="http://github.com/paulirish">Paul Irish</a> <span class="meta">(1)</span></li>
+    <li><a href="http://github.com/addyosmani">Addy Osmani</a> <span class="meta">(1)</span></li>
 </ul>
 
 ## How to Contribute ##
