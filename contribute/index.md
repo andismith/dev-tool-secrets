@@ -18,7 +18,7 @@ The people listed here have created new secrets. Thank you!
 
 <ul>
     <li><a href="http://github.com/Aptary">Aptary</a> <span class="meta">(2)</span></li>
-    <li><a href="https://github.com/janodvarko">Janodvarko</a> <span class="meta">(1)</span></li>
+    <li><a href="https://github.com/janodvarko">Jan Odvarko</a> <span class="meta">(1)</span></li>
     <li><a href="http://github.com/ThomasG77">ThomasG77</a> <span class="meta">(1)</span></li>
     <li><a href="http://github.com/Kaizhi">Kaizhi</a> <span class="meta">(1)</span></li>
     <li><a href="http://github.com/iancrowther">Ian Crowther</a> <span class="meta">(1)</span></li>
