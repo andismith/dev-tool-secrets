@@ -10,6 +10,7 @@ order: 10-02000
 browsers:
 - chrome
 - firefox
+- opera
 categories:
 - inspecting
 parent: inspecting
@@ -20,5 +21,7 @@ tags:
 <p>In the age of responsive design, it's important to see how our sites will look on devices of any size. Although we can resize the browser, there are some additional tools available to us in the Developer Tools.</p>
 
 <p class="chrome">Within the 'Settings' panel of the Chrome Developer Tools (located by clicking the cog in the bottom right corner of the tools) under 'Overrides' you will find 'Device Metrics' which allows you to specify a width and height, together with a font scale size. You can also dock the Developer Tools to the right of the page and resize them to the size you want to test.</p>
+
+<p class="opera">In Opera Developer Tools also you can change the width and height using 'Device Metrics' menu under 'Overrides' tab of 'Settings'.</p>
 
 <p class="firefox">The Firefox Developer Tools include a tool to check your site in any dimension. The 'Responsive Design Mode' tool can be found in the top right header of the Developer Tools. Opening it provides you with a number of preset sizes and an option to add additional ones to cater for your needs. Firefox also provides an option to rotate your dimensions so you can test both landscape and portrait.</p>
