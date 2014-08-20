@@ -9,6 +9,7 @@ authors:
 order: 80-02000
 browsers:
 - chrome
+- firefox
 categories:
 - mobile
 parent: mobile
@@ -47,3 +48,18 @@ tags:
 <p class="chrome">In the Port Forwarding tab, enter the port you wish to forward (e.g. 9000) and the address and port it should map to on your local machine. Now, on your mobile device type in the URL localhost:port (e.g. localhost:9000). Your local site should now load on the device and be available for debugging.</p>
 
 <div class="chrome image"><img src="/assets/img/placeholder.gif" data-src="/assets/img/secrets/chrome-mobile-using-developer-tools-on-android-result.png" /></div>
+
+<div class="firefox">Firefox's "Connect" lets you inspect pages opened with Firefox for Android using Firefox Desktop.</div>
+
+<div class="firefox">The idea is you listen on a specified port using your device and connect to it from desktop. First enable "Remote Debugging" in Firefox for Android from Settings -> Developer Tools, then do the same thing on desktop, Developer Tools -> Settings -> Enable remote debugging.</div>
+
+<div class="firefox">Next, you'll have to forward a port (6000 by default) to your device, in order to do this, we use the Android Debugging Bridge (a.k.a. adb). First you have to install ADB, then enable Android Debugging for your device, follow [this tutorial](http://www.howtogeek.com/125769/how-to-install-and-use-abd-the-android-debug-bridge-utility/) to setup your Android Device, then enter this command:
+
+<pre>
+<code>
+adb forward tcp:6000 tcp:6000
+</code>
+</pre>
+</div>
+
+<div class="firefox">Then open Tools -> Web Developer -> Connect and press "Connect". Firefox for Android will prompt you to accept / deny the request.<div>
