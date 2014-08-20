@@ -24,3 +24,7 @@ tags:
 <p class="chrome">Chrome creates a log of each call to canvas, providing a list of each call to the context and a screenshot. You can click one of the log items to replay the frame in the Developer Tools and see which commands were called in the order they were called and from which line.</p>
 
 <div class="video"><iframe src="about:blank" data-src="http://player.vimeo.com/video/67069011?title=0&amp;byline=0&amp;portrait=0&amp;color=ededed" width="500" height="313" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+<p class="firefox">Firefox has Canvas and WebGL Shader debugger, giving you features to inspect frames, fps, modify shaders and more.</p>
+
+<p class="firefox">In order to enable these tools, go to Devtools settings (the cog icon in devtools) and check "Canvas" and "Shader Editor".</p>
