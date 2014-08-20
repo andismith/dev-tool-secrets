@@ -10,6 +10,7 @@ order: 10-00410
 browsers:
 - chrome
 - firefox
+- opera
 categories:
 - inspecting
 parent: inspecting
@@ -28,6 +29,6 @@ tags:
 
 <p>Typing in a matched selector will automatically highlight it in the DOM tree.</p>
 
-<p class="chrome">In Chrome, you can press Ctrl-F to open the Find dialog. CSS selectors work as expected.</p>
+<p class="chrome">In Chrome and Opera, you can press Ctrl-F to open the Find dialog. CSS selectors work as expected.</p>
 
 <div class="chrome image"><img src="/assets/img/placeholder.gif" data-src="http://i.imgur.com/L4xYPvn.png" /></div>
